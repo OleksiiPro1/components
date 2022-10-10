@@ -1,6 +1,7 @@
 import './App.css';
 import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
+import ListingStateUp from './components/ListingStateUp';
 import MapOverArrays from './components/MapOverArrays';
 import ShowAndDestruct from './components/ShowAndDestruct';
 import UpdatedTitle from './components/UpdatedTitle';
@@ -19,6 +20,8 @@ function App() {
         <ConditionalRendering />
         <h1>ControlledComponent</h1>
         <ControlledComponent />
+        <h1>ListingStateUp</h1>
+        <ListingStateUp />
         <br />
         <br />
       </header>

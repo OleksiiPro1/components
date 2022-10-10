@@ -4,15 +4,28 @@ export default function ControlledComponent() {
   const [inputName, setInputName] = useState('Name');
   return (
     <div>
-      <label>
-        Name:{' '}
-        <input
-          onChange={(event) => {
-            setInputName(event.currentTarget.value);
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+      >
+        <label>
+          Name:{' '}
+          <input
+            onChange={(event) => {
+              setInputName(event.currentTarget.value);
+            }}
+            value={inputName}
+          />
+        </label>
+        <button
+          onClick={() => {
+            setInputName('Name');
           }}
-          value={inputName}
-        />
-      </label>
+        >
+          Reset
+        </button>
+      </form>
       <p>{inputName}</p>
     </div>
   );
