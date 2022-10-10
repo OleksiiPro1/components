@@ -1,4 +1,5 @@
 import './App.css';
+import ChildrenPropExample from './components/ChildrenPropExample';
 import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
 import ListingStateUp from './components/ListingStateUp';
@@ -22,6 +23,8 @@ function App() {
         <ControlledComponent />
         <h1>ListingStateUp</h1>
         <ListingStateUp />
+        <h1>ChildrenPropExample</h1>
+        <ChildrenPropExample />
         <br />
         <br />
       </header>
