@@ -1,4 +1,5 @@
 import './App.css';
+import MapOverArrays from './components/MapOverArrays';
 import ShowAndDestruct from './components/ShowAndDestruct';
 import UpdatedTitle from './components/UpdatedTitle';
 
@@ -10,6 +11,8 @@ function App() {
         <UpdatedTitle />
         <h1>ShowAndDestruct</h1>
         <ShowAndDestruct />
+        <h1>MapOverArrays</h1>
+        <MapOverArrays />
       </header>
     </div>
   );
