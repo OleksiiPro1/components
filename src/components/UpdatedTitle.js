@@ -3,16 +3,18 @@ import { useState } from 'react';
 export default function UpdatedTitle() {
   const [title, setTitle] = useState('first title');
   const [count, setCount] = useState(false);
-
+  function titleAndCount() {
+    setTitle('Updated title');
+    setCount(count + 1);
+  }
   return (
     <div>
-      <h2>
+      <p>
         {title} {count}
-      </h2>
+      </p>
       <button
         onClick={(event) => {
-          setTitle('Updated title');
-          setCount(count + 1);
+          titleAndCount();
         }}
       >
         Click me to update
