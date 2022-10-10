@@ -1,3 +1,5 @@
+import React from 'react';
+
 function ChildrenComponent(props) {
   return <div>{props.children}</div>;
 }

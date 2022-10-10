@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function UpdatedTitle() {
   const [title, setTitle] = useState('first title');

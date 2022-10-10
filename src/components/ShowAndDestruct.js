@@ -1,3 +1,5 @@
+import React from 'react';
+
 // function Box(props) {
 function Box({ title, content }) {
   return (

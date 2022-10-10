@@ -1,3 +1,5 @@
+import React from 'react';
+
 const fruits = [
   { id: 1, name: 'banana', description: 'description 1' },
   { id: 2, name: 'apple', description: 'description 2' },
