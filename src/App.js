@@ -10,6 +10,8 @@ import PropTypesExample from './components/PropTypesExample';
 import RandomUsers from './components/RandomUsers';
 import ShowAndDestruct from './components/ShowAndDestruct';
 import UpdatedTitle from './components/UpdatedTitle';
+import DerivingState from './DerivingState';
+import PropDrilling from './PropDrilling';
 
 function App() {
   return (
@@ -35,6 +37,10 @@ function App() {
         <MyFavoriteAnimal />
         <h1>RandomUsers</h1>
         <RandomUsers />
+        <h1>DerivingState</h1>
+        <DerivingState />
+        <h1>PropDrilling</h1>
+        <PropDrilling />
         <br />
         <br />
       </header>

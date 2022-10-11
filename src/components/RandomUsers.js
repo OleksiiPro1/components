@@ -42,7 +42,7 @@ export default function RandomUsers() {
       {usersList.map((user) => {
         return (
           <div
-            style={{ backgroundColor: 'black', padding: '30px' }}
+            style={{ backgroundColor: 'gray', padding: '30px' }}
             key={`${user.name.first}-${user.name.last}`}
           >
             <p>{user.name.first}</p>
@@ -98,7 +98,7 @@ export default function RandomUsers() {
         Add users
       </button>
 
-      <button
+      {/* <button
         onClick={() => {
           const newList = [...usersList];
           newList[0].name.first = 'New first name';
@@ -107,8 +107,8 @@ export default function RandomUsers() {
         }}
       >
         Update name of new user
-      </button>
-      {/* <button
+      </button> */}
+      <button
         onClick={() => {
           const updatedList = usersList.map((user, index) => {
             if (index === 0) {
@@ -120,10 +120,11 @@ export default function RandomUsers() {
 
             return user;
           });
+          setUsersList(updatedList);
         }}
       >
         Update name of new user
-      </button> */}
+      </button>
       <button onClick={() => setCounter(counter + 1)}>{counter}</button>
       <button onClick={() => setRefetch(!refetch)}>refetch</button>
     </div>
