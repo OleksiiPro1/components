@@ -10,6 +10,7 @@ import PropTypesExample from './components/PropTypesExample';
 import RandomUsers from './components/RandomUsers';
 import ShowAndDestruct from './components/ShowAndDestruct';
 import StateManagmant from './components/StateManagmant';
+import StateManagmentUseReduser from './components/StateManagmentUseReduser';
 import UpdatedTitle from './components/UpdatedTitle';
 import DerivingState from './DerivingState';
 import PropDrilling from './PropDrilling';
@@ -44,6 +45,8 @@ function App() {
         <PropDrilling />
         <h1>StateManagmant</h1>
         <StateManagmant />
+        <h1>StateManagmantUseReduser</h1>
+        <StateManagmentUseReduser />
         <br />
         <br />
       </header>
