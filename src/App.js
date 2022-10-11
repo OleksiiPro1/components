@@ -9,6 +9,7 @@ import MyFavoriteAnimal from './components/MyFavoriteAnimal';
 import PropTypesExample from './components/PropTypesExample';
 import RandomUsers from './components/RandomUsers';
 import ShowAndDestruct from './components/ShowAndDestruct';
+import StateManagmant from './components/StateManagmant';
 import UpdatedTitle from './components/UpdatedTitle';
 import DerivingState from './DerivingState';
 import PropDrilling from './PropDrilling';
@@ -41,6 +42,8 @@ function App() {
         <DerivingState />
         <h1>PropDrilling</h1>
         <PropDrilling />
+        <h1>StateManagmant</h1>
+        <StateManagmant />
         <br />
         <br />
       </header>
