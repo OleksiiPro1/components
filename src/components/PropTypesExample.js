@@ -24,8 +24,11 @@ UserCard.propTypes = {
   name: PropTypes.string.isRequired,
   nickName: PropTypes.string,
   favoriteFood: PropTypes.string,
-  startYear: PropTypes.number,
+  startYear: PropTypes.number.isRequired,
   fruits: PropTypes.array,
+  credentials: PropTypes.shape({
+    keyphrase: PropTypes.string.isRequired,
+  }),
 };
 
 export default function PropTypesExample() {

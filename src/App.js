@@ -5,7 +5,9 @@ import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
 import ListingStateUp from './components/ListingStateUp';
 import MapOverArrays from './components/MapOverArrays';
+import MyFavoriteAnimal from './components/MyFavoriteAnimal';
 import PropTypesExample from './components/PropTypesExample';
+import RandomUsers from './components/RandomUsers';
 import ShowAndDestruct from './components/ShowAndDestruct';
 import UpdatedTitle from './components/UpdatedTitle';
 
@@ -29,6 +31,10 @@ function App() {
         <ChildrenPropExample />
         <h1>PropTypesExample</h1>
         <PropTypesExample />
+        <h1>MyFavoriteAnimal</h1>
+        <MyFavoriteAnimal />
+        <h1>RandomUsers</h1>
+        <RandomUsers />
         <br />
         <br />
       </header>
