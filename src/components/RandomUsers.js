@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-export default function RandomUsers(props) {
+export default function RandomUsers() {
   const [usersList, setUsersList] = useState([]);
   const [counter, setCounter] = useState(0);
   const [refetch, setRefetch] = useState(true);
-
+  const [loading, setLoadind] = useState(true);
   useEffect(() => {
     // console.log('trigger');
     async function getRandomUsers() {
@@ -18,12 +18,16 @@ export default function RandomUsers(props) {
         };
       });
       setUsersList(cleanedUsers);
+      setLoadind(false);
     }
     getRandomUsers().catch(() => {
       // console.log('fetch fails');
     });
   }, [refetch]);
 
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
   return (
     <div>
       {/* {console.log(usersList)} */}
