@@ -5,6 +5,11 @@ export default function RandomUsers() {
   const [counter, setCounter] = useState(0);
   const [refetch, setRefetch] = useState(true);
   const [loading, setLoadind] = useState(true);
+
+  useEffect(() => {
+    document.title = 'My App';
+  }, []);
+
   useEffect(() => {
     // console.log('trigger');
     async function getRandomUsers() {
@@ -25,10 +30,13 @@ export default function RandomUsers() {
     });
   }, [refetch]);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-  return (
+  // if (loading) {
+  //   return <h2>Loading...</h2>;
+  // }
+  return loading ? (
+    <h2>Loading...</h2>
+  ) : (
+    // return (
     <div>
       {/* {console.log(usersList)} */}
       {usersList.map((user) => {
@@ -90,16 +98,17 @@ export default function RandomUsers() {
         Add users
       </button>
 
-      {/* <button
+      <button
         onClick={() => {
           const newList = [...usersList];
           newList[0].name.first = 'New first name';
           newList[0].name.last = 'New last name';
+          setUsersList(newList);
         }}
       >
         Update name of new user
-      </button> */}
-      <button
+      </button>
+      {/* <button
         onClick={() => {
           const updatedList = usersList.map((user, index) => {
             if (index === 0) {
@@ -108,12 +117,13 @@ export default function RandomUsers() {
               newUser.name.last = 'New last name';
               return newUser;
             }
+
             return user;
           });
         }}
       >
         Update name of new user
-      </button>
+      </button> */}
       <button onClick={() => setCounter(counter + 1)}>{counter}</button>
       <button onClick={() => setRefetch(!refetch)}>refetch</button>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const animals = [
+const animalsArray = [
   {
     name: 'turtle',
     size: '1m',
@@ -25,7 +25,8 @@ const animals = [
 ];
 
 export default function MyFavoriteAnimal() {
-  const [isFavorite, setIsFavorite] = useState(animals.isFavorite);
+  const [animals, setAnimals] = useState(animalsArray);
+
   return (
     <>
       {animals.map((animal) => {
@@ -47,9 +48,17 @@ export default function MyFavoriteAnimal() {
               <input
                 // value={false}
                 type="checkbox"
-                checked={isFavorite}
+                checked={animal.isFavorite}
                 onChange={(event) => {
-                  setIsFavorite(event.currentTarget.checked);
+                  setAnimals(
+                    animals.map((animalObject, index) => {
+                      if (animalObject.id === animal.id) {
+                        animalObject.isFavorite = !animalObject.isFavorite;
+                      }
+
+                      return animalObject;
+                    }),
+                  );
                 }}
               />
               {animal.isFavorite ? 'yes' : 'no'}
