@@ -19,13 +19,13 @@ export default function RandomUsers(props) {
       setUsersList(cleanedUsers);
     }
     getRandomUsers().catch(() => {
-      console.log('fetch fails');
+      // console.log('fetch fails');
     });
   }, []);
 
   return (
     <div>
-      {console.log(usersList)}
+      {/* {console.log(usersList)} */}
       {usersList.map((user) => {
         return (
           <div
@@ -39,6 +39,77 @@ export default function RandomUsers(props) {
           </div>
         );
       })}
+      <button
+        onClick={() => {
+          const filteredUserList = usersList.filter((user, index) => {
+            return index < usersList.length - 1;
+          });
+          setUsersList(filteredUserList);
+        }}
+      >
+        Remove user
+      </button>
+
+      <button
+        onClick={() => {
+          const updatedUserList = [
+            ...usersList,
+            {
+              name: {
+                first: 'Alex',
+                last: 'Pit',
+              },
+              gender: 'male',
+              email: '123321@gmail.com',
+            },
+            {
+              name: {
+                first: 'Milla',
+                last: 'Cool',
+              },
+              gender: 'female',
+              email: 'Milla1999@gmail.com',
+            },
+            {
+              name: {
+                first: 'Marta',
+                last: 'Black',
+              },
+              gender: 'female',
+              email: 'martab@gmail.com',
+            },
+          ];
+          setUsersList(updatedUserList);
+        }}
+      >
+        Add users
+      </button>
+
+      {/* <button
+        onClick={() => {
+          const newList = [...usersList];
+          newList[0].name.first = 'New first name';
+          newList[0].name.last = 'New last name';
+        }}
+      >
+        Update name of new user
+      </button> */}
+      <button
+        onClick={() => {
+          const updatedList = usersList.map((user, index) => {
+            if (index === 0) {
+              const newUser = { ...user };
+              newUser.name.first = 'New first name';
+              newUser.name.last = 'New last name';
+              return newUser;
+            }
+            return user;
+          });
+        }}
+      >
+        Update name of new user
+      </button>
+
       <button onClick={() => setCounter(counter + 1)}>{counter}</button>
     </div>
   );
