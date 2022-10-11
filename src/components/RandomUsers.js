@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 export default function RandomUsers(props) {
   const [usersList, setUsersList] = useState([]);
   const [counter, setCounter] = useState(0);
+  const [refetch, setRefetch] = useState(true);
 
   useEffect(() => {
     // console.log('trigger');
@@ -21,7 +22,7 @@ export default function RandomUsers(props) {
     getRandomUsers().catch(() => {
       // console.log('fetch fails');
     });
-  }, []);
+  }, [refetch]);
 
   return (
     <div>
@@ -109,8 +110,8 @@ export default function RandomUsers(props) {
       >
         Update name of new user
       </button>
-
       <button onClick={() => setCounter(counter + 1)}>{counter}</button>
+      <button onClick={() => setRefetch(!refetch)}>refetch</button>
     </div>
   );
 }
