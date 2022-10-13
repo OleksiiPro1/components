@@ -4,6 +4,7 @@ import ChildrenPropExample from './components/ChildrenPropExample';
 import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
 import ListingStateUp from './components/ListingStateUp';
+import MapFromArray from './components/MapFromArray';
 import MapOverArrays from './components/MapOverArrays';
 import MyFavoriteAnimal from './components/MyFavoriteAnimal';
 import PropTypesExample from './components/PropTypesExample';
@@ -47,6 +48,8 @@ function App() {
         <StateManagmant />
         <h1>StateManagmantUseReduser</h1>
         <StateManagmentUseReduser />
+        <h1>MapFromArray</h1>
+        <MapFromArray />
         <br />
         <br />
       </header>
