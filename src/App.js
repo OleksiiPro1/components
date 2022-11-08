@@ -3,16 +3,17 @@ import React from 'react';
 import ChildrenPropExample from './components/ChildrenPropExample';
 import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
+// import DownloadFile from './components/DownloadFile';
 import ListingStateUp from './components/ListingStateUp';
 import MapFromArray from './components/MapFromArray';
 import MapOverArrays from './components/MapOverArrays';
-import MaterialTableDownload from './components/MaterialTableDownload';
 import MyFavoriteAnimal from './components/MyFavoriteAnimal';
 import PropTypesExample from './components/PropTypesExample';
 import RandomUsers from './components/RandomUsers';
 import ShowAndDestruct from './components/ShowAndDestruct';
 import StateManagmant from './components/StateManagmant';
 import StateManagmentUseReduser from './components/StateManagmentUseReduser';
+import TableFilter from './components/TableFilter';
 import UpdatedTitle from './components/UpdatedTitle';
 import DerivingState from './DerivingState';
 import PropDrilling from './PropDrilling';
@@ -51,8 +52,10 @@ function App() {
         <StateManagmentUseReduser />
         <h1>MapFromArray</h1>
         <MapFromArray />
-        <h1>Download</h1>
-        <Download />
+        {/* <h1>Download File</h1>
+        <DownloadFile /> */}
+        <h1>TableFilter</h1>
+        <TableFilter />
         <br />
         <br />
       </header>
