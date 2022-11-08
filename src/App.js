@@ -6,6 +6,7 @@ import ControlledComponent from './components/ControlledComponent';
 import ListingStateUp from './components/ListingStateUp';
 import MapFromArray from './components/MapFromArray';
 import MapOverArrays from './components/MapOverArrays';
+import MaterialTableDownload from './components/MaterialTableDownload';
 import MyFavoriteAnimal from './components/MyFavoriteAnimal';
 import PropTypesExample from './components/PropTypesExample';
 import RandomUsers from './components/RandomUsers';
@@ -50,6 +51,8 @@ function App() {
         <StateManagmentUseReduser />
         <h1>MapFromArray</h1>
         <MapFromArray />
+        <h1>Download</h1>
+        <Download />
         <br />
         <br />
       </header>
