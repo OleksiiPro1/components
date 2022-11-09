@@ -2,12 +2,11 @@ import 'jspdf-autotable';
 import { Button } from '@mui/material';
 import jsPDF from 'jspdf';
 import React from 'react';
-import XLSX from 'xlsx';
 
 const Data = [
   {
     id: 1,
-    employee_name: 'Alex',
+    employee_name: 'SpiderMan',
     employee_role: 'role1',
     completionson_learning: '90 (%)',
     completion_of_quizzes: '80 (%)',
@@ -15,7 +14,7 @@ const Data = [
   },
   {
     id: 2,
-    employee_name: 'Alex',
+    employee_name: 'Batman',
     employee_role: 'role2',
     completionson_learning: '70 (%)',
     completion_of_quizzes: '90 (%)',
@@ -41,28 +40,10 @@ function DownloadFile() {
     doc.save('table.pdf');
   };
 
-  const downloadExcel = () => {
-    const newData = Data.map((row) => {
-      delete row.tableData;
-      return row;
-    });
-    const workSheet = XLSX.utils.json_to_sheet(newData);
-    const workBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workBook, workSheet, 'students');
-    XLSX.write(workBook, { bookType: 'xlsx', type: 'buffer' });
-    XLSX.write(workBook, { bookType: 'xlsx', type: 'binary' });
-    XLSX.writeFile(workBook, 'Data.xlsx');
-  };
-
   return (
-    <>
-      <div>
-        <Button onClick={() => downloadPdf()}>download Pdf</Button>
-      </div>
-      <div>
-        <Button onClick={() => downloadExcel()}>download Excel</Button>
-      </div>
-    </>
+    <div>
+      <Button onClick={() => downloadPdf()}>download Pdf</Button>
+    </div>
   );
 }
 
