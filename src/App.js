@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import AsyncAwait from './components/AsyncAwait';
 import ChildrenPropExample from './components/ChildrenPropExample';
 import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
@@ -54,9 +55,11 @@ function App() {
         <MapFromArray />
         <h1>Download pdf/csv File</h1>
         <DownloadFile />
-
         <h1>TableFilter</h1>
         <TableFilter />
+        <h1>AsyncAwait</h1>
+        <AsyncAwait />
+        <h3>Look in console</h3>
         <br />
         <br />
       </header>
