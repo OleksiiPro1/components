@@ -1,5 +1,6 @@
 import 'jspdf-autotable';
 import { Button } from '@mui/material';
+import { GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid';
 import jsPDF from 'jspdf';
 import React from 'react';
 
@@ -30,6 +31,14 @@ function DownloadFile() {
     { title: 'avg_score', field: 'avg_score' },
   ];
 
+  function CustomToolbar() {
+    return (
+      <GridToolbarContainer>
+        <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
+      </GridToolbarContainer>
+    );
+  }
+
   const downloadPdf = () => {
     const doc = new jsPDF();
     doc.text('Student Details', 20, 10);
@@ -41,9 +50,11 @@ function DownloadFile() {
   };
 
   return (
-    <div>
-      <Button onClick={() => downloadPdf()}>download Pdf</Button>
-    </div>
+    <>
+      <div>
+        <Button onClick={() => downloadPdf()}>download Pdf</Button>
+      </div>
+    </>
   );
 }
 
