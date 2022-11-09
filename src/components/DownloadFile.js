@@ -1,6 +1,10 @@
 import 'jspdf-autotable';
-import { Button } from '@mui/material';
-import { GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid';
+import { Box, Button } from '@mui/material';
+import {
+  DataGrid,
+  GridToolbarContainer,
+  GridToolbarExport,
+} from '@mui/x-data-grid';
 import jsPDF from 'jspdf';
 import React from 'react';
 
@@ -22,19 +26,25 @@ const Data = [
     avg_score: '55',
   },
 ];
-function DownloadFile() {
-  const columns = [
-    { title: 'employee_name', field: 'employee_name' },
-    { title: 'employee_role', field: 'employee_role' },
-    { title: 'completionson_learning', field: 'completionson_learning' },
-    { title: 'completion_of_quizzes', field: 'completion_of_quizzes' },
-    { title: 'avg_score', field: 'avg_score' },
-  ];
 
+const columns = [
+  { title: 'employee_name', field: 'employee_name', flex: 1 },
+  { title: 'employee_role', field: 'employee_role', flex: 1 },
+  {
+    title: 'completionson_learning',
+    field: 'completionson_learning',
+    flex: 1,
+  },
+  { title: 'completion_of_quizzes', field: 'completion_of_quizzes', flex: 1 },
+  { title: 'avg_score', field: 'avg_score', flex: 1 },
+];
+
+function DownloadFile() {
   function CustomToolbar() {
     return (
       <GridToolbarContainer>
-        <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
+        <GridToolbarExport />
+        <Button onClick={() => downloadPdf()}>download Pdf</Button>
       </GridToolbarContainer>
     );
   }
@@ -46,7 +56,7 @@ function DownloadFile() {
       columns: columns.map((col) => ({ ...col, dataKey: col.field })),
       body: Data,
     });
-    doc.save('table.pdf');
+    doc.save('table-name!!!!!!.pdf');
   };
 
   return (
@@ -54,6 +64,19 @@ function DownloadFile() {
       <div>
         <Button onClick={() => downloadPdf()}>download Pdf</Button>
       </div>
+      <Box sx={{ height: 400, width: '100%' }}>
+        <DataGrid
+          sx={{ color: 'white' }}
+          rows={Data}
+          columns={columns}
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          checkboxSelection
+          components={{
+            Toolbar: CustomToolbar,
+          }}
+        />
+      </Box>
     </>
   );
 }

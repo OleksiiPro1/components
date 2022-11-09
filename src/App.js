@@ -4,7 +4,6 @@ import ChildrenPropExample from './components/ChildrenPropExample';
 import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
 import DownloadFile from './components/DownloadFile';
-import DownloadFile2 from './components/DownloadFile2';
 import ListingStateUp from './components/ListingStateUp';
 import MapFromArray from './components/MapFromArray';
 import MapOverArrays from './components/MapOverArrays';
@@ -53,10 +52,9 @@ function App() {
         <StateManagmentUseReduser />
         <h1>MapFromArray</h1>
         <MapFromArray />
-        <h1>Download pdf File</h1>
+        <h1>Download pdf/csv File</h1>
         <DownloadFile />
-        <h1>Download csv File</h1>
-        <DownloadFile2 />
+
         <h1>TableFilter</h1>
         <TableFilter />
         <br />
