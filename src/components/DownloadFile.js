@@ -4,6 +4,7 @@ import {
   DataGrid,
   GridToolbarContainer,
   GridToolbarExport,
+  GridToolbarFilterButton,
 } from '@mui/x-data-grid';
 import jsPDF from 'jspdf';
 import React from 'react';
@@ -16,6 +17,7 @@ const Data = [
     completionson_learning: '90 (%)',
     completion_of_quizzes: '80 (%)',
     avg_score: '99',
+    filter: 'filter 1',
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ const Data = [
     completionson_learning: '70 (%)',
     completion_of_quizzes: '90 (%)',
     avg_score: '55',
+    filter: 'filter 2',
   },
 ];
 
@@ -37,6 +40,7 @@ const columns = [
   },
   { title: 'completion_of_quizzes', field: 'completion_of_quizzes', flex: 1 },
   { title: 'avg_score', field: 'avg_score', flex: 1 },
+  { title: 'filter', field: 'filter', flex: 1, hide: true },
 ];
 
 function DownloadFile() {
@@ -45,6 +49,7 @@ function DownloadFile() {
       <GridToolbarContainer>
         <GridToolbarExport />
         <Button onClick={() => downloadPdf()}>download Pdf</Button>
+        <GridToolbarFilterButton />
       </GridToolbarContainer>
     );
   }

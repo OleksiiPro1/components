@@ -14,7 +14,6 @@ import RandomUsers from './components/RandomUsers';
 import ShowAndDestruct from './components/ShowAndDestruct';
 import StateManagmant from './components/StateManagmant';
 import StateManagmentUseReduser from './components/StateManagmentUseReduser';
-import TableFilter from './components/TableFilter';
 import UpdatedTitle from './components/UpdatedTitle';
 import DerivingState from './DerivingState';
 import PropDrilling from './PropDrilling';
@@ -53,13 +52,13 @@ function App() {
         <StateManagmentUseReduser />
         <h1>MapFromArray</h1>
         <MapFromArray />
-        <h1>Download pdf/csv File</h1>
+        <h1>Download pdf/csv File + fliter </h1>
         <DownloadFile />
-        <h1>TableFilter</h1>
-        <TableFilter />
+
         <h1>AsyncAwait</h1>
         <AsyncAwait />
         <h3>Look in console</h3>
+
         <br />
         <br />
       </header>
