@@ -6,6 +6,7 @@ import ConditionalRendering from './components/ConditionalRendering';
 import ControlledComponent from './components/ControlledComponent';
 import DownloadFile from './components/DownloadFile';
 import ListingStateUp from './components/ListingStateUp';
+import MapArrayOfObjects from './components/MapArrayOfObjects';
 import MapFromArray from './components/MapFromArray';
 import MapOverArrays from './components/MapOverArrays';
 import MyFavoriteAnimal from './components/MyFavoriteAnimal';
@@ -59,6 +60,8 @@ function App() {
         <AsyncAwait />
         <h3>Look in console</h3>
 
+        <h1>MapArrayOfObjects</h1>
+        <MapArrayOfObjects />
         <br />
         <br />
       </header>
