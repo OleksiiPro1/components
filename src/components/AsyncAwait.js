@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function AsyncAwait() {
   async function fetchData(url) {
     try {
@@ -8,7 +10,16 @@ export default function AsyncAwait() {
     }
   }
   const url = 'http://jsonplaceholder.typicode.com/posts';
-  fetchData(url).then((data) => {
-    console.log(data);
-  });
+  function Push() {
+    // const url = 'http://jsonplaceholder.typicode.com/posts';
+    fetchData(url).then((data) => {
+      console.log(data);
+    });
+  }
+  return (
+    <div>
+      <button onClick={Push}>PUSH</button>
+      <p>{url}</p>
+    </div>
+  );
 }

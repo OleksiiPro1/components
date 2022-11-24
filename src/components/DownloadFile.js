@@ -1,9 +1,11 @@
 import 'jspdf-autotable';
-import { Box, Button } from '@mui/material';
+import { Box, Button, MenuItem } from '@mui/material';
 import {
   DataGrid,
+  GridCsvExportMenuItem,
   GridToolbarContainer,
   GridToolbarExport,
+  GridToolbarExportContainer,
   GridToolbarFilterButton,
 } from '@mui/x-data-grid';
 import jsPDF from 'jspdf';
@@ -47,8 +49,21 @@ function DownloadFile() {
   function CustomToolbar() {
     return (
       <GridToolbarContainer>
-        <GridToolbarExport />
-        <Button onClick={() => downloadPdf()}>download Pdf</Button>
+        <GridToolbarExportContainer>
+          <GridCsvExportMenuItem />
+
+          <Box>
+            <MenuItem onClick={() => {}} sx={{ width: '100%', pl: -1 }}>
+              Another download
+            </MenuItem>
+          </Box>
+          <Box>
+            <MenuItem onClick={() => downloadPdf()} sx={{ width: '100%' }}>
+              Download as Pdf
+            </MenuItem>
+          </Box>
+        </GridToolbarExportContainer>
+
         <GridToolbarFilterButton />
       </GridToolbarContainer>
     );
