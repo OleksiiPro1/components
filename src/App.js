@@ -1,5 +1,6 @@
 import './App.css';
-import React from 'react';
+import { Button } from '@mui/material';
+import React, { useState } from 'react';
 import AsyncAwait from './components/AsyncAwait';
 import ChildrenPropExample from './components/ChildrenPropExample';
 import ConditionalRendering from './components/ConditionalRendering';
@@ -20,6 +21,7 @@ import DerivingState from './DerivingState';
 import PropDrilling from './PropDrilling';
 
 function App() {
+  const [counter, setCounter] = useState(0);
   return (
     <div className="App">
       <header className="App-header">
@@ -63,6 +65,9 @@ function App() {
         <h1>MapArrayOfObjects</h1>
         <MapArrayOfObjects />
         <br />
+        <Button onClick={() => setCounter(counter + 1)}>+</Button>
+        {counter}
+        <Button onClick={() => setCounter(counter - 1)}>-</Button>
         <br />
       </header>
     </div>
